@@ -1,0 +1,201 @@
+@import "mixins";
+@import "variables";
+
+*{
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+html,body{
+    @include body;
+    grid-template-rows: 64px 50px 286px 440px 1226.5px 196.5px;
+    grid-template-areas: "header"
+                         "heading"
+                         "menu"
+                         "fonctionnement"
+                         "restaurants"
+                         "footer";
+}
+header{
+    @include header;
+}
+.heading{
+    grid-area: heading;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    background-color: darken($color-bg, 5%) ;
+    padding: 1rem 0;
+    span{
+        font-weight: 600;
+        padding-left: 1rem;
+    }
+}
+.menu{
+    grid-area: menu;
+    padding: 35px 30px 55px 37px;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background-color: #f2f2f2;
+    h2{
+        width: 15rem;
+        margin: 0 auto;
+    }
+    p{
+        font-size: 1.1rem;
+        margin-bottom: 1.75rem;
+    }
+    .btn{
+       @include btn;
+    }
+   
+}
+.fonctionnement{
+    grid-area: fonctionnement;
+    padding: 30px 20px 65px 20px ;
+    .fonctionnement__box{
+        height: 17.25rem;
+        display: grid;
+        row-gap: 20px;
+        grid-template-columns: 1fr;
+        text-decoration: none;
+        align-items: center;
+    }
+}
+.fonctionnement-div{
+    background-color: $color-bg;
+    border-radius: 20px;
+    padding: 28px;
+    width: 330px;
+    &:hover{
+        background-color: lighten($color-primaire, 35%);
+        .a-text i{
+            font-size: 1.2rem;
+            /*opacity: 0.5;*/
+            color: $color-primaire;
+        }
+    }
+    & a{
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        color: $color;
+        font-weight: 600;
+        &:hover{
+                background-color: $color;
+        }
+    }
+}
+.a-chiffre{
+    position: absolute;
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: #fff;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: $color-primaire;
+    top: 12px;
+    right: 0;
+    transform: translate(-50%,-50%);
+}
+.a-text span{
+    margin-left: 25px;
+    margin-right: 40px;
+}
+.restaurants{
+    grid-area: restaurants;
+    background-color: $color-font;
+    padding: 30px 20px 60px 20px ;
+    .restaurants-box{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 1090px;
+        margin: 0;
+        padding: 0;
+    }
+}
+.restaurants-img{
+    position: relative;
+    & div{
+        font-family: $fontfam;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: darken($color-tertiaire, 40%);
+        position: absolute;
+        background-color:$color-tertiaire ;
+        right: 5%;
+        top: 5%;
+        padding: 8px;
+        z-index: 1;
+    }
+    & img{
+        width: 100%;
+        height: 176px;
+        border-radius: 20px 20px 0 0;
+        object-fit: cover;
+    }
+}
+.restaurants-text{
+    @include flex;
+    width: 300px;
+    .restaurants-text__i{
+        font-size: 1.5rem;
+        .icon-plein{
+            display: none;
+        }
+        .icon-vide{
+            display: block;
+        }
+        
+        &:hover{
+            .icon-plein{
+                display: block;
+                background: linear-gradient($color-primaire, $color-secondaire);
+                background: -webkit-linear-gradient($color-primaire, $color-secondaire);
+                background: -moz-linear-gradient($color-primaire, $color-secondaire);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                -moz-text-fill-color: transparent;
+                animation: coeur 5s;
+            }
+            @keyframes coeur {
+                0%{
+                    opacity: 0;
+                }
+                100%{
+                    opacity: 1;
+                }
+            }
+            .icon-vide{
+                display: none;
+            }
+        }
+    }
+}
+.restaurants-text__heading{
+    line-height: 0.4rem;
+}
+
+.restaurants-box__part{
+    width: 336px;
+    height: 254px;
+    margin: auto;
+    text-decoration: none;
+    border-radius: 20px;
+    background-color: #fff;
+    & a{
+        text-decoration: none;
+        color: #000;
+    }
+}
+footer{
+   @include footer;
+}

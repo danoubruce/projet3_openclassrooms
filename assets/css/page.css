@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+html, body {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  max-width: 375px;
+  font-family: "Roboto", sans-serif;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 64px 1416px 196.5px;
+  grid-template-areas: "header" "main" "footer";
+}
+
+header {
+  grid-area: header;
+  margin: auto;
+}
+header .logo {
+  height: auto;
+  width: 10.31rem;
+  text-align: center;
+  margin: auto;
+  align-items: center;
+}
+
+.img-heading {
+  height: 220px;
+  background-image: "assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg";
+  background-size: cover;
+}
+
+main {
+  height: 1200px;
+}
+
+.bloc {
+  background-color: #f2f2f2;
+  border-radius: 35px 35px 0 0;
+  padding-top: 10 13px 25px 13px;
+}
+
+.bloc-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  width: 85%;
+}
+
+.bloc-heading__text {
+  font-size: 1.8rem;
+  font-family: "Shrikhand", sans-serif;
+}
+
+.bloc-heading__icon {
+  font-size: 1.5rem;
+}
+.bloc-heading__icon .icon-plein {
+  display: none;
+}
+.bloc-heading__icon .icon-vide {
+  display: block;
+}
+.bloc-heading__icon:hover .icon-plein {
+  display: block;
+  background: linear-gradient(#9356DC, #FF79DA);
+  background: -webkit-linear-gradient(#9356DC, #FF79DA);
+  background: -moz-linear-gradient(#9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  animation: coeur 5s;
+}
+@keyframes coeur {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.bloc-heading__icon:hover .icon-vide {
+  display: none;
+}
+
+.brochure {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 250px;
+}
+
+.menu {
+  border-radius: 20px;
+  padding: 28px;
+  width: 350px;
+  height: 70px;
+  align-items: center;
+  background-color: #fff;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer {
+  grid-area: footer;
+  padding: 0px 160px 38px 24px;
+  background-color: #000;
+  opacity: 0.8;
+}
+footer .footer__h3 {
+  font-family: "Shrikhand", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #fff;
+}
+footer ul {
+  list-style-type: none;
+  padding-left: 0;
+  line-height: 1.7rem;
+  font-size: 0.95rem;
+}
+footer ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+footer ul li a i {
+  font-size: 0.8rem;
+  width: 9px;
+  margin-right: 10px;
+}
+
+/*# sourceMappingURL=page.css.map */

@@ -1,0 +1,80 @@
+@mixin header {
+    grid-area: header;
+    margin: auto;
+    .logo{
+       @include logo;
+    }
+}
+@mixin html-body {
+    @include body;
+    grid-template-rows: 64px 1416px 196.5px;
+    grid-template-areas: "header"
+                         "main"
+                         "footer";
+}
+@mixin body {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    max-width: 375px;
+    font-family: $fontfam;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+@mixin flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+@mixin footer {
+    grid-area: footer;
+    padding: 0px 160px 38px 24px;
+    background-color: $color;
+    opacity: 0.8;
+    
+    .footer__h3{
+        font-family: $fontfam-title;
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: #fff;
+    }
+    ul{
+        list-style-type: none;
+        padding-left: 0;
+        line-height: 1.7rem;
+        font-size: 0.95rem;
+        li{
+           a{
+            color: #fff;
+            text-decoration: none;
+            i{
+                font-size: 0.8rem;
+                width: 9px;
+                margin-right: 10px;  
+            }
+           }
+        }
+    }
+}
+@mixin logo {
+    height: auto;
+    width: 10.31rem;
+    text-align: center;
+    margin: auto;
+    align-items: center;
+}
+@mixin btn {
+    background: linear-gradient($color-secondaire,$color-primaire);
+        border-radius: 25px;
+        width: 13.75rem;
+        height: 3.2rem;
+        margin: auto;
+        padding: 15px;
+        font-size: 1rem;
+        font-weight: 500;
+        & a{
+            text-decoration: none;
+            color: #fff;
+        }
+}

@@ -1,0 +1,94 @@
+@import "mixins";
+@import "variables";
+
+*{
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+html,body{
+    @include html-body;
+}
+header{
+    @include header;
+}
+.img-heading{
+    height: 220px;
+    background-image: 'assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg';
+    background-size: cover;
+}
+main{
+    height: 1200px;
+}
+.bloc{
+    background-color: #f2f2f2;
+    border-radius: 35px 35px 0 0;
+    padding-top: 10 13px 25px 13px;
+}
+.bloc-heading{
+    @include flex;
+    width: 85%;
+}
+.bloc-heading__text{
+    font-size: 1.8rem;
+    font-family: $fontfam-title;
+}
+.bloc-heading__icon{
+    font-size: 1.5rem;
+    .icon-plein{
+        display: none;
+    }
+    .icon-vide{
+        display: block;
+    }
+    
+    &:hover{
+        .icon-plein{
+            display: block;
+            background: linear-gradient($color-primaire, $color-secondaire);
+            background: -webkit-linear-gradient($color-primaire, $color-secondaire);
+            background: -moz-linear-gradient($color-primaire, $color-secondaire);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+            animation: coeur 5s;
+        }
+        @keyframes coeur {
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        .icon-vide{
+            display: none;
+        }
+    }
+}
+
+.brochure{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px;
+}
+.menu {
+border-radius: 20px;
+padding: 28px;
+width: 350px;
+height: 70px;
+align-items: center;
+background-color: #fff;
+margin: auto;
+display: flex;
+justify-content: space-between;
+}
+
+footer{
+    @include footer;
+ }
